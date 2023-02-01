@@ -19,5 +19,29 @@ public class Main {
         System.out.println(p3.move(0, 0)); // true
         System.out.println(p3.move(2, 1)); // false
         System.out.println();
+
+        Chessboard b = new Chessboard();
+        b.add(new Rook(5, 5), new Behavior() {
+            @Override
+            public boolean simulate(Piece p) {
+                return p.move(5, 7) && p.move(7, 7) && p.move(2, 2);
+            }
+        });
+
+        b.add(new King(1, 0), new Behavior() {
+            @Override
+            public boolean simulate(Piece p) {
+                return p.move(1, 1) && p.move(2, 1) && p.move(2,3);
+            }
+        });
+
+        b.add(new Bishop(3, 3), new Behavior() {
+            @Override
+            public boolean simulate(Piece p) {
+                return p.move(4, 4) && p.move(0, 0);
+            }
+        });
+
+        b.startGame();
     }
 }
