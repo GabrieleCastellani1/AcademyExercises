@@ -25,15 +25,13 @@ public abstract class Piece {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o){
-            return true;
-        }else {
-            return this.getClass().getName().equals(o.getClass().getName());
-        }
+        if (this == o) return true;
+        if (!(o instanceof Piece piece)) return false;
+        return x == piece.x && y == piece.y;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getClass().getName());
+        return Objects.hash(x, y);
     }
 }
