@@ -1,5 +1,7 @@
 package it.euris.academy2023.finance;
 
+import it.euris.academy2023.finance.xmlRep.xmlFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
 

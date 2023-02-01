@@ -14,6 +14,6 @@ public class Main {
 
         PortfolioSimulator ps = new PortfolioSimulator();
         ps.addCustomer(c1);
-        ps.printXml();
+        System.out.println(ps.printXml());
     }
 }

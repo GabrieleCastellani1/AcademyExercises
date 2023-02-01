@@ -36,4 +36,10 @@ public class Account {
     public List<Balance> getBalances() {
         return balances;
     }
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", type=" + type;
+    }
 }

@@ -1,4 +1,6 @@
-package it.euris.academy2023.finance;
+package it.euris.academy2023.finance.xmlRep;
+
+import it.euris.academy2023.finance.Balance;
 
 public class xmlBalanceLine {
     private Balance b;

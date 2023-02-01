@@ -13,4 +13,9 @@ public class Balance {
     public FinancialInstrument getInstrument() {
         return instrument;
     }
+
+    @Override
+    public String toString() {
+        return "quotes=" + quotes;
+    }
 }

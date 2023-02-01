@@ -23,12 +23,12 @@ public abstract class Piece {
         this.y = y;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Piece piece)) return false;
         return x == piece.x && y == piece.y;
-    }
+    }*/
 
     @Override
     public int hashCode() {

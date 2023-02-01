@@ -37,4 +37,12 @@ public class Customer {
     public void addAccount(Account ac){
         this.accounts.add(ac);
     }
+
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthYear=" + birthYear +
+                ", id='" + id + '\'';
+    }
 }

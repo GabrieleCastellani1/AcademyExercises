@@ -26,4 +26,14 @@ public class FinancialInstrument {
     }
 
     public FinancialInstrument(){}
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", description='" + description + '\'' +
+                ", lastPrice=" + lastPrice +
+                ", country='" + country + '\'' +
+                ", currency='" + currency + '\'' +
+                ", t=" + t;
+    }
 }
