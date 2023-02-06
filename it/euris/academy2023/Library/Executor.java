@@ -15,7 +15,7 @@ public class Executor {
 
         if (operation.equalsIgnoreCase("i")) {
 
-            lib.insert(ClassLogic.createContent(content, title));
+            lib.insert(Creator.createContent(content, title));
             return "Operazione di inserimento eseguita";
 
         } else if (operation.equalsIgnoreCase("r")) {

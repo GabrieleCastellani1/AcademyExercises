@@ -1,8 +1,8 @@
 package it.euris.academy2023.Library;
 
-public class ClassLogic {
+public class Creator {
 
-    public ClassLogic(){}
+    public Creator(){}
 
     public static Content createContent(String type, String title){
         switch(type){

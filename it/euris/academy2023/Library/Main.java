@@ -11,12 +11,13 @@ public class Main {
         lib.insert(new Book( "narnia"));
         lib.insert(new Video("harry potter"));
         Executor ex = new Executor(lib);
+        System.out.println("inserisci comando:");
+        String command = scanner.nextLine();
 
         do {
-            System.out.println("inserisci comando:");
-            String command = scanner.nextLine();
             System.out.println(ex.execute(command));
             System.out.println("inserisci comando:");
-        } while (!scanner.nextLine().equalsIgnoreCase("EXIT"));
+            command = scanner.nextLine();
+        } while (!command.equalsIgnoreCase("EXIT"));
     }
 }
