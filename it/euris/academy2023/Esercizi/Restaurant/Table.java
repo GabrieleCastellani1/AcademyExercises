@@ -1,37 +1,34 @@
 package it.euris.academy2023.Esercizi.Restaurant;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class Table {
-    public boolean libero;
-    public int tavoloID;
-    public int coperti;
-    HashMap<Integer, Integer> ordineAttuale;
+    private boolean free;
+    private int ID;
+    private int places;
 
-    public Table (int numero, int posti){
-        this.libero = true;
-        this.tavoloID = numero;
-        this.coperti = posti;
-        this.ordineAttuale = new HashMap<Integer, Integer>();
+    private List<Eatable> ordered;
+    HashMap<Eatable, Float> tableOrder;
+
+    public Table (int num, int places){
+        this.free = true;
+        this.ID = num;
+        this.places = places;
+        this.tableOrder = new HashMap<Eatable, Float>();
     }
 
-    // table not available
-    public void setOccupato(){
-        libero = false;
+    public void addOrder(Eatable ... ordered){
+        for (Eatable ord : ordered) {
+            tableOrder.put(ord, ord.getPrice());
+        }
     }
 
-    // available table
-    public void setLibero(){
-        libero = true;
-    }
-
-    // check the state of the table:
-    public boolean getStato(){
-        return this.libero;
-    }
-
-    //
-    public void setOrdineAttuale(int uno, int due){
-        ordineAttuale.put(uno, due);
+    public float getBill(){
+        float bill = 0;
+        for (Eatable f : ordered) {
+            bill += f.getPrice();
+        }
+        return bill;
     }
 }
