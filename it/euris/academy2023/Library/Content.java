@@ -1,6 +1,6 @@
 package it.euris.academy2023.Library;
 
-public abstract class Content {
+public class Content {
     private final String type;
     private final String title;
 

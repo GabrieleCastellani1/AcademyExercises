@@ -12,9 +12,10 @@ public class Main {
         Executor ex = new Executor(lib);
 
         do {
-            System.out.println("inserisci comando");
+            System.out.println("inserisci comando:");
             String command = scanner.nextLine();
             System.out.println(ex.execute(command));
+            System.out.println("inserisci comando:");
         } while (!scanner.nextLine().equalsIgnoreCase("EXIT"));
     }
 }
