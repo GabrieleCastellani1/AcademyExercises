@@ -20,13 +20,12 @@ public class Library<T extends Content> {
         }
     }
 
-    public boolean search(String content, String title) {
+    public int search(String content, String title) {
         Iterator<T> it = contents.get(content).iterator();
-        boolean found = false;
+        int found = 0;
         while (it.hasNext()) {
             if (it.next().getTitle().equalsIgnoreCase(title)) {
-                found = true;
-                break;
+                found += 1;
             }
         }
         return found;

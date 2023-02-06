@@ -1,7 +1,16 @@
 package it.euris.academy2023.Library;
 
 public class Video extends Content {
-    public Video(String type, String title) {
-        super(type, title);
+
+    private final String type;
+
+    public Video(String title) {
+        super(title);
+        this.type = "v";
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
     }
 }

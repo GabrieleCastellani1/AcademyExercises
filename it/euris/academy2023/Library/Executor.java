@@ -14,12 +14,13 @@ public class Executor {
         String title = command.substring(command.indexOf("-")+1);
 
         if (operation.equalsIgnoreCase("i")) {
-            lib.insert(new Video("v", "harry potter"));
+
+            lib.insert(ClassLogic.createContent(content, title));
             return "Operazione di inserimento eseguita";
 
         } else if (operation.equalsIgnoreCase("r")) {
-            boolean found = lib.search(content, title);
-            return "Operazione di ricerca eseguita e ha prodotto risultato " + found;
+            int found = lib.search(content, title);
+            return "Operazione di ricerca eseguita e sono stati trovati " + found + " cotnenuti con quel nome";
 
         } else {
             return "formato stringa sbagliato";

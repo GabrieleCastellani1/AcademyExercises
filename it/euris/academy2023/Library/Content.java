@@ -1,17 +1,13 @@
 package it.euris.academy2023.Library;
 
-public class Content {
-    private final String type;
+public abstract class Content {
     private final String title;
 
-    public Content(String type, String title){
+    public Content(String title){
         this.title = title;
-        this.type = type;
     }
 
-    public String getType(){
-        return type;
-    }
+    public abstract String getType();
 
     public String getTitle(){
         return title;

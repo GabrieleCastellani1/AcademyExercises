@@ -6,9 +6,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library<Content> lib = new Library<>();
-        lib.insert(new Book("l", "harry potter"));
-        lib.insert(new Book("l", "narnia"));
-        lib.insert(new Video("v", "harry potter"));
+        lib.insert(new Book( "harry potter"));
+        lib.insert(new Book( "harry potter"));
+        lib.insert(new Book( "narnia"));
+        lib.insert(new Video("harry potter"));
         Executor ex = new Executor(lib);
 
         do {

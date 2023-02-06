@@ -2,7 +2,15 @@ package it.euris.academy2023.Library;
 
 public class Book extends Content {
 
-    public Book(String type, String title) {
-        super(type, title);
+    private final String type;
+
+    public Book(String title) {
+        super(title);
+        this.type = "l";
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
     }
 }
