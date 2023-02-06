@@ -1,6 +1,7 @@
 package it.euris.academy2023.Esercizi.Restaurant;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Menu {
@@ -18,13 +19,20 @@ public class Menu {
     }
 
     public Eatable get(String s){
-        if(this.food.contains(s)){
-            return this.food.get(food.indexOf(s));
-        }else if(this.drink.contains(s)){
-            return this.drink.get(drink.indexOf(s));
-        }else{
-            return null;
+        Eatable obj = null;
+        for (Eatable f : food) {
+            if(f.getName().equalsIgnoreCase(s)){
+                obj = f;
+            }
         }
+        if(obj == null) {
+            for (Eatable d : drink) {
+                if (d.getName().equalsIgnoreCase(s)) {
+                    obj = d;
+                }
+            }
+        }
+        return obj;
     }
 
     public void addEatable(Eatable eatable){

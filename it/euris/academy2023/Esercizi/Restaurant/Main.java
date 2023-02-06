@@ -1,14 +1,6 @@
 package it.euris.academy2023.Esercizi.Restaurant;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.HashMap;
-
-
 public class Main {
-
-        // Main method
         public static void main(String[] args) {
             Table t1 = new Table(1, 4);
             Table t2 = new Table(2, 5);
@@ -26,5 +18,8 @@ public class Main {
 
             float bill1 = t1.getBill();
             float bill2 = t2.getBill();
+
+            System.out.println(bill1);
+            System.out.println(bill2);
         }
 }
