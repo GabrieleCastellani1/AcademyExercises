@@ -25,9 +25,9 @@ public class Eatable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Eatable eatable)) return false;
-        return this.name.equalsIgnoreCase(eatable.name);
+        if (this == o) {return true;}
+        if (!(o instanceof Eatable)){ return false;}
+        return this.name.equalsIgnoreCase(((Eatable)o).name);
     }
 
     @Override
