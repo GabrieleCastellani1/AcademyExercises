@@ -6,11 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library<Content> lib = new Library<>();
-        lib.insert(new Book( "harry potter"));
-        lib.insert(new Book( "harry potter"));
-        lib.insert(new Book( "narnia"));
-        lib.insert(new Video("harry potter"));
         Executor ex = new Executor(lib);
+        ex.execute("i/l-harry potter");
+        ex.execute("i/l-harry potter");
+        ex.execute("i/l-narnia");
+        ex.execute("i/v-harry potter");
+
         System.out.println("inserisci comando:");
         String command = scanner.nextLine();
 
