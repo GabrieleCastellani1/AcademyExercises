@@ -15,7 +15,7 @@ public class xmlBalanceLine {
                     + ">";
         s += "<FinancialInstrument>";
         s += b.getInstrument().toString();
-        s += "</FinancialInstrument";
+        s += "</FinancialInstrument>";
         return s;
     }
 }

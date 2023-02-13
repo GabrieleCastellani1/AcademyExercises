@@ -1,13 +1,14 @@
 package it.euris.academy2023.EserciziMichael.zoo.comandi;
 
+import it.euris.academy2023.EserciziMichael.zoo.exception.BadCommandFormatException;
 import it.euris.academy2023.EserciziMichael.zoo.manager.ZooManager;
 
 import java.util.List;
 
 public class CommandCreator {
-    private ZooManager manager;
-    private String operation;
-    private List<String> parameters;
+    private final ZooManager manager;
+    private final String operation;
+    private final List<String> parameters;
     public CommandCreator(ZooManager manager, String operation, List<String> parameters) {
         this.manager = manager;
         this.operation = operation;

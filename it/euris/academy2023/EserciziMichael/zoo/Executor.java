@@ -1,6 +1,6 @@
 package it.euris.academy2023.EserciziMichael.zoo;
 
-import it.euris.academy2023.EserciziMichael.zoo.comandi.BadCommandFormatException;
+import it.euris.academy2023.EserciziMichael.zoo.exception.BadCommandFormatException;
 import it.euris.academy2023.EserciziMichael.zoo.comandi.CommandCreator;
 import it.euris.academy2023.EserciziMichael.zoo.manager.ZooManager;
 
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Executor {
 
-    private ZooManager manager;
+    private final ZooManager manager;
     public Executor(ZooManager manager){
         this.manager = manager;
     }

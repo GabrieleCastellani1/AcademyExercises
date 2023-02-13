@@ -1,5 +1,6 @@
 package it.euris.academy2023.EserciziMichael.zoo.comandi;
 
+import it.euris.academy2023.EserciziMichael.zoo.exception.BadCommandFormatException;
 import it.euris.academy2023.EserciziMichael.zoo.exception.ZooNotFoundException;
 import it.euris.academy2023.EserciziMichael.zoo.manager.ZooManager;
 
