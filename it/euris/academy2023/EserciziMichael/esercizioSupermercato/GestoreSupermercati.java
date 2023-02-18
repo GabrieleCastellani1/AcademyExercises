@@ -1,9 +1,6 @@
 package it.euris.academy2023.EserciziMichael.esercizioSupermercato;
 
-import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.MarketNotPresentException;
-import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.ProductNotPresentException;
-import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.RepartoNotPresentException;
-import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.TooMuchException;
+import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.*;
 import it.euris.academy2023.EserciziMichael.esercizioSupermercato.prodotto.Prodotto;
 import it.euris.academy2023.EserciziMichael.esercizioSupermercato.supermercato.EntryReparto;
 import it.euris.academy2023.EserciziMichael.esercizioSupermercato.supermercato.Reparto;
@@ -48,13 +45,13 @@ public class GestoreSupermercati {
         return s.isPresent(nomeReparto) + "";
     }
 
-    public EntryReparto acquistaDaSupermercato(String prodotto, String supermercato, int quantità) throws ProductNotPresentException, TooMuchException, MarketNotPresentException {
+    public EntryReparto acquistaDaSupermercato(String prodotto, String supermercato, int quantità) throws ProductNotPresentException, TooMuchException, MarketNotPresentException{
         Supermercato s =  supermercati
                 .stream()
                 .filter(sup -> sup.getNome().equalsIgnoreCase(supermercato))
                 .findFirst()
                 .orElseThrow(() -> new MarketNotPresentException());
-        s.acquistaProdotto(prodotto, quantità);
+            s.acquistaProdotto(prodotto, quantità);
         return s.findProdotto(prodotto);
     }
 

@@ -1,11 +1,11 @@
 package it.euris.academy2023.EserciziMichael.esercizioConcessionaria.comandi.parameters;
 
 public class BuyParameters implements CommandParameters, Comparable<BuyParameters>{
-    private String concessionaria;
-    private String tipo;
-    private String marca;
-    private String nome;
-    private int quantità;
+    private final String concessionaria;
+    private final String tipo;
+    private final String marca;
+    private final String nome;
+    private final int quantità;
 
     public BuyParameters(String concessionaria, String tipo, String marca, String nome, int quantità) {
         this.concessionaria = concessionaria;

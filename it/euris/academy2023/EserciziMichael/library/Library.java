@@ -3,7 +3,7 @@ package it.euris.academy2023.EserciziMichael.library;
 import java.util.*;
 
 public class Library<T> {
-    private final Map<String, HashMap<String, T>>contents;
+    private final Map<String, Map<String, T>> contents;
 
     public Library() {
         this.contents = new HashMap<>();
@@ -12,7 +12,7 @@ public class Library<T> {
     public void insert(T content, String type, String title) {
         Map<String, T> sameType = contents.get(type);
         if (sameType == null) {
-            HashMap<String, T> typeContent = new HashMap<>();
+            Map<String, T> typeContent = new HashMap<>();
             typeContent.put(title, content);
             contents.put(title, typeContent);
         } else {

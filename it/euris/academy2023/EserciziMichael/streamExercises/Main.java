@@ -36,7 +36,7 @@ public class Main {
         System.out.println(
                 listIntger.stream()
                         .filter(i -> i > 5)
-                        .collect(Collectors.summingInt(integer -> integer.intValue()))
+                        .collect(Collectors.summingInt(i -> i.intValue()))
         );
 
         //OPPURE

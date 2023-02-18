@@ -1,6 +1,7 @@
 package it.euris.academy2023.EserciziMichael.esercizioConcessionaria.concessionaria;
 
 import it.euris.academy2023.EserciziMichael.esercizioConcessionaria.veicolo.Veicolo;
+import it.euris.academy2023.EserciziMichael.esercizioConcessionaria.veicolo.tipoEnum;
 
 public class VeicoliEntry {
     private final Veicolo veicolo;
@@ -13,8 +14,14 @@ public class VeicoliEntry {
         this.prezzo = prezzo;
     }
 
-    public Veicolo getVeicolo() {
-        return veicolo;
+    public boolean containsVehicle(Veicolo v){
+        return this.veicolo.equals(v);
+    }
+
+    public boolean containsVehicle(String tipo, String marca, String nome){
+        return this.veicolo.getTipo().equals(tipoEnum.valueOf(tipo))
+                && this.veicolo.getMarca().equals(marca)
+                && this.veicolo.getNome().equals(nome);
     }
 
     public int getQuantità() {

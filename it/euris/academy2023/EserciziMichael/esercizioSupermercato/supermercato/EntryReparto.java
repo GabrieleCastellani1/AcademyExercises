@@ -4,10 +4,10 @@ import it.euris.academy2023.EserciziMichael.esercizioSupermercato.exceptions.Too
 import it.euris.academy2023.EserciziMichael.esercizioSupermercato.prodotto.Prodotto;
 
 public class EntryReparto {
-    private Prodotto prodotto;
+    private final Prodotto prodotto;
     private int quantità;
-    private float prezzo;
-    private Reparto r;
+    private final float prezzo;
+    private final Reparto r;
 
     public Prodotto getProdotto() {
         return prodotto;
@@ -21,7 +21,7 @@ public class EntryReparto {
         return prezzo;
     }
 
-    public Reparto getR() {
+    public Reparto getReparto() {
         return r;
     }
 

@@ -66,10 +66,10 @@ public class FrazioneImmutabile {
      * @return un'istanza di frazione
      * @throws RuntimeException dopo aver creato 4 istanze
      */
-    public static FrazioneImmutabile newInstance(String frazione) {
+    public static FrazioneImmutabile newInstance(String frazione, Supplier<FrazioneImmutabile> supplier) {
         String f = frazione.trim();
         String[] tokens = f.split("/");
-        return newInstance(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+        return newInstance(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]), supplier);
 
     }
 
@@ -80,10 +80,10 @@ public class FrazioneImmutabile {
      * @param denominatore il denominatore
      * @return un'istanza di frazione
      */
-    public static FrazioneImmutabile newInstance(int numeratore, int denominatore) {
+    public static FrazioneImmutabile newInstance(int numeratore, int denominatore, Supplier<FrazioneImmutabile> supplier) {
         String key = "_" + (double) numeratore / denominatore;
         if (!frazioniPool.containsKey(key)) {
-            frazioniPool.put(key, new FrazioneImmutabile(numeratore, denominatore));
+            frazioniPool.put(key, supplier.create());
             instanceNumber++;
         }
         return frazioniPool.get(key);
@@ -150,17 +150,17 @@ public class FrazioneImmutabile {
 
     public static void main(String[] args) {
         FrazioneImmutabile.precisione = 4;
-        FrazioneImmutabile f1 = FrazioneImmutabile.newInstance(1, 1);
+        FrazioneImmutabile f1 = FrazioneImmutabile.newInstance(1, 1, () -> new FrazioneImmutabile(1,1));
         System.out.println(f1.hashCode());
-        FrazioneImmutabile f2 = FrazioneImmutabile.newInstance(2, 4);
+        FrazioneImmutabile f2 = FrazioneImmutabile.newInstance(2, 4, () -> new FrazioneImmutabile(2,4));
         System.out.println(f2.hashCode());
-        FrazioneImmutabile f3 = FrazioneImmutabile.newInstance(1, 2);
+        FrazioneImmutabile f3 = FrazioneImmutabile.newInstance(1, 2, () -> new FrazioneImmutabile(1,2));
         System.out.println(f3.hashCode());
-        FrazioneImmutabile f4 = FrazioneImmutabile.newInstance(12, 4);
+        FrazioneImmutabile f4 = FrazioneImmutabile.newInstance(12, 4, () -> new FrazioneImmutabile(12, 4));
         System.out.println(f4.hashCode());
-        FrazioneImmutabile f5 = FrazioneImmutabile.newInstance(1, 2);
+        FrazioneImmutabile f5 = FrazioneImmutabile.newInstance(1, 2, () -> new FrazioneImmutabile(1,2));
         System.out.println(f5.hashCode());
-        FrazioneImmutabile f6 = FrazioneImmutabile.newInstance(125, 4);
+        FrazioneImmutabile f6 = FrazioneImmutabile.newInstance(125, 4, () -> new FrazioneImmutabile(125,4));
         System.out.println(f6.hashCode());
 
         System.out.println("Num istanze: " + FrazioneImmutabile.getInstanceNumber());

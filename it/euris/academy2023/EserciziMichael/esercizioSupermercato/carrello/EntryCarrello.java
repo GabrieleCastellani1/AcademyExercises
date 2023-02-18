@@ -13,7 +13,7 @@ public class EntryCarrello {
     private Supermercato s;
 
     public EntryCarrello(EntryReparto entryReparto, Supermercato s) {
-        this.r = entryReparto.getR();
+        this.r = entryReparto.getReparto();
         this.prodotto = entryReparto.getProdotto();
         this.quantità = entryReparto.getQuantità();
         this.prezzo = entryReparto.getPrezzo();

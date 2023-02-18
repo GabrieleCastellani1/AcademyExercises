@@ -25,7 +25,7 @@ public class Executor {
             try {
                 return gestoreSupermercati.findProdotto(prodotto, supermercato);
             } catch (MarketNotPresentException e) {
-                throw new RuntimeException(e);
+                return " supermercato non presente";
             }
 
         } else if (operation.equalsIgnoreCase("searchAllP")) {
@@ -35,7 +35,7 @@ public class Executor {
             try {
                 return gestoreSupermercati.findAllProdotti(supermercato);
             } catch (MarketNotPresentException e) {
-                throw new RuntimeException(e);
+                return "supermercato non presente";
             }
 
         } else if (operation.equalsIgnoreCase("searchR")) {
@@ -46,7 +46,7 @@ public class Executor {
             try {
                 return gestoreSupermercati.isPresent(supermercato, reparto);
             } catch (MarketNotPresentException e) {
-                throw new RuntimeException(e);
+                return "supermercato non presente";
             }
         }else if(operation.equalsIgnoreCase("buyP")) {
             String[] tokens = command.substring(command.indexOf(":") + 1).split(",");
@@ -56,7 +56,7 @@ public class Executor {
             try {
                 return gestoreAcquisti.acquistaDaSupermercato(prodotto, supermercato, quantità);
             } catch (MarketNotPresentException e) {
-                throw new RuntimeException(e);
+                return "supermercato non presente";
             }
         }else if(operation.equalsIgnoreCase("removeP")){
             String[] tokens = command.substring(command.indexOf(":") + 1).split(",");
@@ -64,7 +64,7 @@ public class Executor {
             try {
                 return gestoreAcquisti.rimuoviDaCarrello(prodotto);
             } catch (EntryNotPresentExceeption e) {
-                throw new RuntimeException(e);
+                return "entry non presente";
             }
         }else if(operation.equalsIgnoreCase("printCarrello")){
             return gestoreAcquisti.stampaCarrello();

@@ -9,7 +9,7 @@ public class Reparto {
 
     private String nome;
     private TipologiaProdottoEnum tipo;
-    private List<EntryReparto> EntryProdotti;
+    private final List<EntryReparto> EntryProdotti;
 
     public Reparto(List<EntryReparto> entryProdotti) {
         EntryProdotti = entryProdotti;

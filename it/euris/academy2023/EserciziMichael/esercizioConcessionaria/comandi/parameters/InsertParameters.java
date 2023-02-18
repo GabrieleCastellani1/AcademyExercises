@@ -1,41 +1,27 @@
 package it.euris.academy2023.EserciziMichael.esercizioConcessionaria.comandi.parameters;
 
+import it.euris.academy2023.EserciziMichael.esercizioConcessionaria.veicolo.Veicolo;
+
 public class InsertParameters implements CommandParameters{
     private final String concessionaria;
-    private final String tipo;
-    private final String marca;
-    private final String nome;
+    private final Veicolo veicolo;
     private final int quantità;
     private final float prezzo;
 
-    public InsertParameters(String concessionaria, String tipo, String marca, String nome, int quantità, float prezzo) {
+    public InsertParameters(String concessionaria, Veicolo veicolo, int quantità, float prezzo) {
         this.concessionaria = concessionaria;
-        this.tipo = tipo;
-        this.marca = marca;
-        this.nome = nome;
+        this.veicolo = veicolo;
         this.quantità = quantità;
         this.prezzo = prezzo;
     }
 
     @Override
     public String[] getParameters() {
-        return new String[]{concessionaria, tipo, marca, nome, quantità + "", prezzo + ""};
+        return new String[]{concessionaria, veicolo.toString(), quantità + "", prezzo + ""};
     }
 
     public String getConcessionaria() {
         return concessionaria;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public int getQuantità() {
@@ -44,5 +30,9 @@ public class InsertParameters implements CommandParameters{
 
     public float getPrezzo() {
         return prezzo;
+    }
+
+    public Veicolo getVeicolo() {
+        return this.veicolo;
     }
 }
